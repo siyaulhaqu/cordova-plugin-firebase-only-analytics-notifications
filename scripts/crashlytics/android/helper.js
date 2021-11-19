@@ -47,7 +47,7 @@ function addDependencies(buildGradle, context) {
 function addRepos(buildGradle) {
   // find the known line to match
   var match = buildGradle.match(/^(\s*)jcenter\(\)/m);
-  var whitespace = match[1];
+  var whitespace = match && match[1];
 
   // modify the line to add the necessary repo
   // Crashlytics goes under buildscripts which is the first grouping in the file
