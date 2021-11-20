@@ -21,7 +21,7 @@ function readRootBuildGradle() {
 function addDependencies(buildGradle, context) {
   // find the known line to match
   var match = buildGradle.match(/^(\s*)classpath 'com.android.tools.build(.*)/m);
-  var whitespace = match[1];
+  var whitespace = match && match[1];
   
   // modify the line to add the necessary dependencies
   var sdk = utils.getAndroidTargetSdk(context);
